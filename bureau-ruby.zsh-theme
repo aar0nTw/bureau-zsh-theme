@@ -2,12 +2,12 @@
 
 ### NVM
 
-ZSH_THEME_NVM_PROMPT_PREFIX="%{$fg_bold[green]%}%B⬡%{$reset_color%}%b "
+ZSH_THEME_NVM_PROMPT_PREFIX="%{$FG[079]%}%B⬡%{$reset_color%}%b "
 ZSH_THEME_NVM_PROMPT_SUFFIX=""
 
 ### Ruby
 ZSH_THEME_RVM_PROMPT_OPTIONS=( v p g )
-ZSH_THEME_RVM_PROMPT_PREFIX="%{$fg_bold[red]%}%B⬡ RB%{$reset_color%}%b "
+ZSH_THEME_RVM_PROMPT_PREFIX="%{$FG[167]%}%B⬡ %{$reset_color%}%b"
 ZSH_THEME_RVM_PROMPT_SUFFIX=" "
 
 ### Git [±master ▾●]
@@ -112,7 +112,7 @@ else
   _USERNAME="%{$FG[195]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
-_USERNAME="%{$BG[033]%}%{$fg[black]%}⮀ $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}⮀ %{$reset_color%}%m"
+_USERNAME="%{$BG[033]%}%{$fg[black]%}⮀ $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}⮀ %{$reset_color%}%{$FG[229]%}%m%{$reset_color%}"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
@@ -130,7 +130,7 @@ get_space () {
   echo $SPACES
 }
 
-_1LEFT="$_USERNAME [%*] $_PATH"
+_1LEFT="$_USERNAME | $_PATH"
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT`
