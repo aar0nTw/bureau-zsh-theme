@@ -22,7 +22,7 @@ ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR='⮀'
+SEGMENT_SEPARATOR=""
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -112,7 +112,7 @@ else
   _USERNAME="%{$FG[195]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
-_USERNAME="%{$BG[033]%}%{$fg[black]%}⮀ $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}⮀ %{$reset_color%}%{$FG[229]%}%m%{$reset_color%}"
+_USERNAME="%{$BG[033]%}%{$fg[black]%}$SEGMENT_SEPARATOR $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}$SEGMENT_SEPARATOR %{$reset_color%}%{$FG[229]%}%m%{$reset_color%}"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
