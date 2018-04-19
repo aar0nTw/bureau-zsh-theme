@@ -113,6 +113,7 @@ else
   _LIBERTY="%{$fg[green]%}$"
 fi
 _USERNAME="%{$BG[033]%}%{$fg[black]%}$SEGMENT_SEPARATOR $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}$SEGMENT_SEPARATOR %{$reset_color%}%{$FG[229]%}%m%{$reset_color%}"
+
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
