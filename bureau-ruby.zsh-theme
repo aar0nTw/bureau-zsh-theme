@@ -2,13 +2,15 @@
 
 ### NVM
 
-ZSH_THEME_NVM_PROMPT_PREFIX="%{$FG[079]%}%B⬡%{$reset_color%}%b "
+ZSH_THEME_NVM_PROMPT_PREFIX="%{$FG[079]%}%B%{$reset_color%}%b "
 ZSH_THEME_NVM_PROMPT_SUFFIX=""
 
 ### Ruby
 ZSH_THEME_RVM_PROMPT_OPTIONS=( v p g )
-ZSH_THEME_RVM_PROMPT_PREFIX="%{$FG[167]%}%B⬡ %{$reset_color%}%b"
-ZSH_THEME_RVM_PROMPT_SUFFIX=" "
+ZSH_THEME_RUBY_PROMPT_PREFIX="%{$FG[167]%}%B%{$reset_color%}%b "
+ZSH_THEME_RUBY_PROMPT_SUFFIX=" "
+
+PYENV_PROMPT_PREFIX="%{$FG[085]%}%B%{$reset_color%}%b "
 
 ### Git [±master ▾●]
 
@@ -112,7 +114,8 @@ else
   _USERNAME="%{$FG[195]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
-_USERNAME="%{$BG[033]%}%{$fg[black]%}$SEGMENT_SEPARATOR $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}$SEGMENT_SEPARATOR %{$reset_color%}%{$FG[229]%}%m%{$reset_color%}"
+_USERNAME="
+%{$BG[033]%}%{$fg[black]%}$SEGMENT_SEPARATOR $_USERNAME %{$reset_color%}%{$BG[032]%}%{$fg[black]%} %{$BG[031]%}%{$fg[black]%} %{$BG[030]%}%{$fg[black]%} %{$BG[029]%}%{$fg[black]%} %{$bg[black]%}%{$FG[028]%}$SEGMENT_SEPARATOR %{$reset_color%}%{$FG[229]%}%m%{$reset_color%}"
 
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
@@ -138,10 +141,11 @@ bureau_precmd () {
   echo
 }
 
+
 setopt prompt_subst
 PROMPT='$_1LEFT$_1SPACES$_1RIGHT
 > $_LIBERTY '
-RPROMPT='$(rvm_prompt_info) $(nvm_prompt_info) $(bureau_git_prompt)'
+RPROMPT='$PYENV_PROMPT_PREFIX$(pyenv_prompt_info) $(rvm_prompt_info)$(nvm_prompt_info) $(bureau_git_prompt)'
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd bureau_precmd
